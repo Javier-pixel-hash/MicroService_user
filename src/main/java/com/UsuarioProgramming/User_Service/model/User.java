@@ -23,6 +23,4 @@ public class User {
   private String password;
   private String email;
   private Integer edad;
-  private Double peso;
-  private Double height;
 }

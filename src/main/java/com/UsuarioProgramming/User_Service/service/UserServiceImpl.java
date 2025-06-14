@@ -67,12 +67,6 @@ public User actualizarUsuario(int id, UserServiceDto usuarioDto) {
     if (usuarioDto.getEdad() != null) {
         usuarioExistente.setEdad(usuarioDto.getEdad());
     }
-    if (usuarioDto.getPeso() != null) {
-        usuarioExistente.setPeso(usuarioDto.getPeso());
-    }
-    if (usuarioDto.getHeight() != null) {
-        usuarioExistente.setHeight(usuarioDto.getHeight());
-    }
     return usuarioRepository.save(usuarioExistente);
 }
 }

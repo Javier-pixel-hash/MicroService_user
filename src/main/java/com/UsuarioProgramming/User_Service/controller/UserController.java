@@ -30,9 +30,7 @@ public class UserController {
             usuarioDto.getLastName(),
             usuarioDto.getPassword(),
             usuarioDto.getEmail(),
-            usuarioDto.getEdad(),
-            usuarioDto.getPeso(),
-            usuarioDto.getHeight()
+            usuarioDto.getEdad()
         );
 
         User guardado = usuarioService.guardarUsuario(nuevoUsuario);
