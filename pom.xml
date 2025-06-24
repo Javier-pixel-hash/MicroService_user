@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.0</version>
+		<version>3.5.3</version>
 		<relativePath/>
 	</parent>
 	
@@ -27,6 +27,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--Net DataFaker-->
+		<dependency>
+    		<groupId>net.datafaker</groupId>
+    		<artifactId>datafaker</artifactId>
+    		<version>2.0.2</version>
 		</dependency>
 
 		<!-- Spring Data JPA -->

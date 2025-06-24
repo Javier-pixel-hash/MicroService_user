@@ -27,7 +27,7 @@ public class UserController {
         User nuevoUsuario = new User(
             0,  // id para que se genere automáticamente
             usuarioDto.getName(),
-            usuarioDto.getLastName(),
+            usuarioDto.getUsername(),
             usuarioDto.getPassword(),
             usuarioDto.getEmail(),
             usuarioDto.getEdad()

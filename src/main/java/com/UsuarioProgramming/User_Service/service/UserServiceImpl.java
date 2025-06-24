@@ -55,8 +55,8 @@ public User actualizarUsuario(int id, UserServiceDto usuarioDto) {
     if (usuarioDto.getName() != null) {
         usuarioExistente.setName(usuarioDto.getName());
     }
-    if (usuarioDto.getLastName() != null) {
-        usuarioExistente.setLastName(usuarioDto.getLastName());
+    if (usuarioDto.getUsername() != null) {
+        usuarioExistente.setUsername(usuarioDto.getUsername());
     }
     if (usuarioDto.getPassword() != null) {
         usuarioExistente.setPassword(usuarioDto.getPassword());
