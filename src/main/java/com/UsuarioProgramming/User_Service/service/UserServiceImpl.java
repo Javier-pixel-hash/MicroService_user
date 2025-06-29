@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -34,23 +35,21 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public boolean eliminarUsuario(int id) {
-        Optional<User> usuario = usuarioRepository.findById(id);
-        if (usuario.isPresent()) {
-            usuarioRepository.deleteById(id);
-            return true;
-        } else {
-            return false;
-        }
+        User user = usuarioRepository.findById(id)
+        .orElseThrow(() -> new NoSuchElementException("Usuario no existe"));
+        usuarioRepository.deleteById(id);
+        return true;
     }
+
     @Override
-public Optional<User> obtenerPorId(int id) {
+    public Optional<User> obtenerPorId(int id) {
     return usuarioRepository.findById(id);
-}
+    }
 
 @Override
 public User actualizarUsuario(int id, UserServiceDto usuarioDto) {
     User usuarioExistente = usuarioRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Usuario no existe"));
+        .orElseThrow(() -> new NoSuchElementException("Usuario no existe"));
 
     if (usuarioDto.getName() != null) {
         usuarioExistente.setName(usuarioDto.getName());

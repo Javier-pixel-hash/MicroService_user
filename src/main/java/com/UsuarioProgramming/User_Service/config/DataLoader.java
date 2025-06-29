@@ -25,13 +25,13 @@ public class DataLoader implements CommandLineRunner {
         // Solo insertar si la base de datos está vacía
         if (userRepository.count() == 0) {
             List<User> users = new ArrayList<>();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 900; i++) {
                 User user = new User();
                 user.setName(faker.name().fullName());
                 user.setUsername(faker.internet().username());
                 user.setPassword(faker.internet().password(8, 16));
                 user.setEmail(faker.internet().emailAddress());
-                user.setEdad(faker.number().numberBetween(1, 120));
+                user.setEdad(faker.number().numberBetween(1, 100));
                 users.add(user);
             }
             userRepository.saveAll(users);
