@@ -9,7 +9,6 @@ import com.UsuarioProgramming.User_Service.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -20,8 +19,6 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Faker faker = new Faker();
-        Random random = new Random();
-
         // Solo insertar si la base de datos está vacía
         if (userRepository.count() == 0) {
             List<User> users = new ArrayList<>();
